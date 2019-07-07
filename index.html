@@ -44,7 +44,7 @@
     <section>
         <!--导航栏开始-->
         <nav>
-            <ul>
+            <ul class="nav-ul">
                 <li><a href="#">热门</a></li>
                 <li><a href="#">头条</a></li>
                 <li><a href="#">视频</a></li>
@@ -63,20 +63,16 @@
         <!--主栏开始-->
         <comment>
             <div class="back">
-                <img src="images/006p6qzdly1g43xzjcyerj30hs0a0mzq.jpg" id="img1">
-                <img src="images/7077dc1dly1g4379ke75vj20zk0k075m.jpg" id="img2">
-                <img src="images/73d5291fly1fyarpiufgkj21420mi1kx.jpg" id="img3">
-                <img src="images/007nudV3ly1g1yreu21boj30u00go76c.jpg" id="img4">
-                <img src="images/0067oJQZly1fxosbnm2k5j31400u0qab.jpg" id="img5">
+                <img src="" class="pic">
                     <div class="character">
                 关于狮子座系列
                 </div>
                 <div class="radio">
-                    <a href="#img1"></a>
-                    <a href="#img2"></a>
-                    <a href="#img3"></a>
-                    <a href="#img4"></a>
-                    <a href="#img5"></a>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
                 </div>
             </div>
             <p class="con-font"><a href="#"><span>#周冬雨情商# </span>昨晚的微博电影之夜，主持人说让易烊千玺给周冬雨来个摸头杀 结果千玺尴尬站着</a></p>
@@ -973,7 +969,7 @@
                             <a href="#"><img src="images/loading.png" alt=""></a>
                             <a href="#"><img src="images/loading.png" alt=""></a>
                         </p>
-                    
+
                     </div>
                 </div>
             </div>
@@ -1264,6 +1260,62 @@
             </p>
         </div>
     </footer>
-<!--脚步结束-->
+<!--结尾结束-->
 </body>
+<script>
+    var asideTop = document.querySelector(".box-aside-top");
+    var navUl = document.querySelector("nav");
+    var back = document.querySelector(".back");
+    var pic = document.querySelector(".pic");
+    var radio = document.querySelector(".radio");
+    var p = radio.querySelectorAll("p") ;
+
+    // console.log(navUl);
+    onscroll = function () {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop >= 2000) {
+            asideTop.className = "fxx";
+            asideTop.style.height = "326"+ "px";
+        }else {
+            asideTop.className = "box-aside-top";
+        }
+
+        if (scrollTop >= 1000){
+            navUl.className = "fx2";
+            navUl.style.height = "530" + "px";
+        }else {
+            navUl.className = "nav";
+        }
+    }
+    var arrPic = ["images/banner1.jpg","images/banner2.jpg","images/banner3.jpg","images/banner4.jpg","images/banner5.jpg",]
+    var timer;
+    var num = 0;
+    pic.src = arrPic[0];
+    next = function () {
+        num++;
+        if (num >= arrPic.length) {
+            num = 0;
+        }
+        pic.src = arrPic[num];
+    }
+    timer = setInterval(function(){
+        next();
+    },3000)
+    back.onmouseover = function () {
+        clearInterval(timer);
+    }
+    back.onmouseout = function(){
+       timer = setInterval(function () {
+           next();
+       },3000)
+    }
+      var funny = function (i) {
+          p[i].onclick = function () {
+              pic.src = arrPic[i];
+          }
+      }
+      for (var i = 0; i < p.length; i++) {
+          funny(i);
+      }
+</script>
 </html>

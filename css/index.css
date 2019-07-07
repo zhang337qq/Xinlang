@@ -124,34 +124,31 @@ section{
 nav{
     width: 110px;
     height: 530px;
-    /*background-color: red;*/
     float: left;
-    /*position: fixed;*/
-    /*left: 0;*/
-    /*top: 0;*/
 }
-nav ul{
+nav .nav-ul{
+    position: absolute;
     width: 110px;
     height: 530px;
 }
-nav ul li{
+nav .nav-ul li{
     border-radius: 4px;
     width: 110px;
     height: 40px;
     text-align: center;
     line-height: 40px;
 }
-nav ul li:hover{
+nav .nav-ul li:hover{
     background-color: #fd4c34;
 
 }
-nav ul li a:hover{
+nav .nav-ul li a:hover{
     color: #fff;
 }
-nav ul li+li{
+nav .nav-ul li+li{
     margin: 5px 0;
 }
-nav ul li:nth-child(1){
+nav .nav-ul li:nth-child(1){
     background-color: #fd4c34;
 
 }
@@ -163,16 +160,18 @@ section nav ul li a{
     color: black;
 }
 comment{
-    float: left;
+    /*float: left;*/
     width: 660px;
     height: 7295px;
-    margin: 0 30px;
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*right: 0;*/
-    /*bottom: 0;*/
-    /*top: 0;*/
-    /*margin: auto;*/
+    /*margin: 0 30px;*/
+    position: absolute;
+    left: 170px;
+    right: 0;
+    top: 0;
+}
+.fx2{
+    position: fixed;
+    top: 52px;
 }
 .back{
     width: 660px;
@@ -203,16 +202,17 @@ comment{
     bottom: 10px;
     z-index: 5;
 }
-.radio a{
+.radio p{
     display: block;
-    height: 10px;
-    width: 10px;
+    height: 6px;
+    width: 6px;
     border-radius: 50%;
     background-color: #fff;
     float: left;
-    margin: 0 10px;
+    margin: 0 6px;
+    cursor: pointer;
 }
-.radio a:hover{
+.radio p:hover{
     background-color: #fa7d3c;
 }
 .con-font{
@@ -396,33 +396,20 @@ comment{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /*右侧栏开始*/
 aside{
     min-height: 2000px;
     width: 340px;
-    float: left;
+    position: absolute;
+    right: 0;
 }
-/*.box-aside-top{*/
-    /*width: 340px;*/
-    /*height: 326px;*/
-    /*background-color: #f0f0f0;*/
-    /*border-radius: 3px;*/
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*z-index: 1;*/
-    /*margin-top: 50px;*/
-/*}*/
+.box-aside-top{
+    width: 340px;
+    height: 326px;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    z-index: 1;
+}
 .aside-top{
     width: 340px;
     height: 326px;
@@ -447,6 +434,9 @@ aside{
     background-color: #fff;
     border: 1px solid #e6e6e6;
 
+}
+.fxx{
+    position: fixed;
 }
 .aside-top-cen-top{
     width: 270px;
